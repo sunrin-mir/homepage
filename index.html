@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="MIR.ico">
+    <script src="index.js"></script>
+    <title>2022 MIR</title>
+
+
+</head>
+
+<body>
+    <!-- 로고 svg-->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 118 94"
+        style="height: 0; width: 0; position: absolute; visibility: hidden;">
+        <defs>
+            <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="75.8929" y1="198.8926" x2="99.6143"
+                y2="266.2265" gradientTransform="matrix(1 0 0 1 0 -177.0577)">
+                <stop offset="4.525201e-02" style="stop-color:#F0B7CD" />
+                <stop offset="0.3578" style="stop-color:#EDB6D1" />
+                <stop offset="0.6747" style="stop-color:#E6B2DD" />
+                <stop offset="0.9928" style="stop-color:#D9ACF1" />
+                <stop offset="1" style="stop-color:#D9ACF2" />
+            </linearGradient>
+            <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="46.8294" y1="198.8954" x2="70.5508"
+                y2="266.2294" gradientTransform="matrix(1 0 0 1 0 -177.0577)">
+                <stop offset="4.525201e-02" style="stop-color:#F0B7CD" />
+                <stop offset="0.3578" style="stop-color:#EDB6D1" />
+                <stop offset="0.6747" style="stop-color:#E6B2DD" />
+                <stop offset="0.9928" style="stop-color:#D9ACF1" />
+                <stop offset="1" style="stop-color:#D9ACF2" />
+            </linearGradient>
+            <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="94.567" y1="190.6418" x2="105.1915"
+                y2="212.7648" gradientTransform="matrix(1 0 0 1 0 -177.0577)">
+                <stop offset="0.233" style="stop-color:#F0B7CD" />
+                <stop offset="0.9602" style="stop-color:#EFB7CE" />
+            </linearGradient>
+            <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="17.7784" y1="198.8939" x2="41.4998"
+                y2="266.2278" gradientTransform="matrix(1 0 0 1 0 -177.0577)">
+                <stop offset="4.525201e-02" style="stop-color:#F0B7CD" />
+                <stop offset="0.3578" style="stop-color:#EDB6D1" />
+                <stop offset="0.6747" style="stop-color:#E6B2DD" />
+                <stop offset="0.9928" style="stop-color:#D9ACF1" />
+                <stop offset="1" style="stop-color:#D9ACF2" />
+            </linearGradient>
+        </defs>
+        <symbol id="mirlogo" viewBox="0 0 118 94">
+            <title>MirLogo</title>
+            <path class="st0" d="M110.8,92.8L110.8,92.8c-3.8,2.4-8.8,1.2-11.2-2.6L62.7,31.1c-2.4-3.8-1.2-8.8,2.6-11.2l0,0
+                c3.8-2.4,8.8-1.2,11.2,2.6l36.9,59.1C115.8,85.4,114.6,90.4,110.8,92.8z" fill="url('#SVGID_1_')" />
+            <path class="st1" d="M81.7,92.8L81.7,92.8c-3.8,2.4-8.8,1.2-11.2-2.6L33.6,31.1c-2.4-3.8-1.2-8.8,2.6-11.2l0,0
+                c3.8-2.4,8.8-1.2,11.2,2.6l36.9,59.1C86.7,85.4,85.6,90.4,81.7,92.8z" fill="url('#SVGID_2_')" />
+            <path class="st2" d="M104.9,34.9c4.5,0,8.1-3.6,8.1-8.1l0,0c0-4.5-3.6-8.1-8.1-8.1H84l10.2,16.3H104.9z"
+                fill="url('#SVGID_3_')" />
+            <path class="st3" d="M52.7,92.8L52.7,92.8c-3.8,2.4-8.8,1.2-11.2-2.6L4.6,31.1c-2.4-3.8-1.2-8.8,2.6-11.2l0,0
+		c3.8-2.4,8.8-1.2,11.2,2.6l36.9,59.1C57.7,85.4,56.5,90.4,52.7,92.8z" fill="url('#SVGID_4_')" />
+            <circle class="st4" cx="54.2" cy="8.1" r="8.1" fill="#F0B7CD" />
+        </symbol>
+    </svg>
+
+    <!-- 헤더-->
+
+    <div id="bodyLayout">
+        <div class="sticky-top" style="z-index: 5;" style="background-color: white;">
+            <header
+                class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom "
+                style="background-color: white; ">
+                <a href="/" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"
+                        style="margin-left: 2em;">
+                        <use xlink:href="#mirlogo" />
+                    </svg>
+                </a>
+                <a href="#" class="nav-link px-2 link-secondary"></a>
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li class="lielement" onclick="myscrollTo('mirTitle')">MIR</li>
+                    <li class="lielement" onclick="myscrollTo('introTitle')">Introduction</li>
+                    <li class="lielement" onclick="myscrollTo('postersTitle')">Posters</li>
+                    <li class="lielement" onclick="myscrollTo('portfolioTitle')">Portfolios</li>
+                </ul>
+            </header>
+        </div>
+
+        <div class="SectionTitle mirTitle">MIR</div>
+        <!-- 단체사진, 간단 설명-->
+        <div class="container" id="main">
+            <img src="MirPeople.jpg" alt="단체사진" id="MirPeople">
+            <div id="greetings">
+                <span>선린인터넷고등학교 콘텐츠 디자인과의</span>
+                <span>유일한 만화 및 일러스트 전문동아리 MIR입니다</span>
+                <br>
+                <span>MIR는 전문적이고 다양한 커리큘럼을 통해</span>
+                <span>미래를 그려낼 인재를 양성합니다</span>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+        <div class="separator"></div>
+
+        <!-- 동아리실, 인트로덕션-->
+        <div class="SectionTitle introTitle">Introduction</div>
+        <div class="container" id="infoContainer">
+            <div id="shadowedBox">
+                <div id="room_sprite">
+                    <div id="arrowDiv">
+                        <div onclick="onSpriteClick('left'); disableClick(this);" class="arrowContainer"><img
+                                src="left.png" class="arrows left"></div>
+                        <div onclick="onSpriteClick('right'); disableClick(this);" class="arrowContainer"><img
+                                src="right.png" class="arrows right"></div>
+                    </div>
+                    <div id="slideDot">
+                        <span class="dots" id="dots1" onclick="changeSpriteByNumber(1)">•</span>
+                        <span class="dots" id="dots2" onclick="changeSpriteByNumber(2)">•</span>
+                        <span class="dots" id="dots3" onclick="changeSpriteByNumber(3)">•</span></div>
+                </div>
+                <div id="introText">
+                    <span>선린인터넷고등학교 콘텐츠디자인과의 전문동아리 미르입니다.</span>
+                    <span>2001년부터 달려온 미르는 긴 역사와 전통을 자랑합니다.</span>
+                    <span>우수한 인재들의 다양한 수상실적이 미르의 가치를 증명합니다.</span>
+                    <span>디자인 이론, 크로키, 드로잉, 해부학, 색채 이론 등의</span>
+                    <span>다양한 커리큘럼과, 신티크 타블렛, 클립 스튜디오, 포토샵,</span>
+                    <span>일러스트레이터 등을 연계한 수업이</span>
+                    <span>신입생 여러분들을 기다립니다.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+        <div class="separator"></div>
+
+
+        <div class="SectionTitle postersTitle">Posters</div>
+        <div id="postersDiv">
+            <div id="posters">
+                <div class="poster poster1"><img src="thumb_posters/no1.jpg" alt="포스터 1">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">이태은</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster2"><img src="thumb_posters/no2.jpg" alt="포스터 2">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">이시연</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster3"><img src="thumb_posters/no3.jpg" alt="포스터 3">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">강승주</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster4"><img src="thumb_posters/no4.jpg" alt="포스터 4">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">구슬이</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster5"><img src="thumb_posters/no5.jpg" alt="포스터 5">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">김은서</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster6"><img src="thumb_posters/no6.jpg" alt="포스터 6">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">류준상</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster7"><img src="thumb_posters/no7.jpg" alt="포스터 7">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">유신비</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster8"><img src="thumb_posters/no8.jpg" alt="포스터 8">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">이나영</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="poster poster9"><img src="thumb_posters/no9.jpg" alt="포스터 9">
+                    <div class="overlay"><img src="thumb_posters/overlay.png" class="overlayImage">
+                        <div class="posterNameDiv">
+                            <span class="posterName">황서희</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator"></div>
+        <div class="separator"></div>
+
+
+        <div class="SectionTitle portfolioTitle">Portfolios</div>
+        <div id="portfolioDiv">
+            <div class="portfolioFor">
+                <div class="portfolio portfolio1">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(1, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(1, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio1Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio1Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio1Dot3">•</span>
+                    </div>
+                </div>
+                <!-- 3 -->
+
+                <span class="authorName">이태은</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio2">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(2, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(2, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio2Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio2Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio2Dot3">•</span>
+                        <span class="portfolioDot" id="portfolio2Dot4">•</span>
+                        <span class="portfolioDot" id="portfolio2Dot5">•</span>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <span class="authorName">이시연</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio3">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(3, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(3, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio3Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio3Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio3Dot3">•</span>
+                    </div>
+                </div>
+
+                <!-- 3 -->
+                <span class="authorName">강승주</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio4">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(4, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(4, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio4Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio4Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio4Dot3">•</span>
+                        <span class="portfolioDot" id="portfolio4Dot4">•</span>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <span class="authorName">구슬이</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio5">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(5, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(5, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio5Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio5Dot2">•</span>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <span class="authorName">김은서</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio6">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(6, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(6, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio6Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio6Dot2">•</span>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <span class="authorName">류준상</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio7">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(7, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(7, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio7Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio7Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio7Dot3">•</span>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <span class="authorName">유신비</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio8">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(8, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(8, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio8Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio8Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio8Dot3">•</span>
+                        <span class="portfolioDot" id="portfolio8Dot4">•</span>
+                        <span class="portfolioDot" id="portfolio8Dot5">•</span>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <span class="authorName">이나영</span>
+            </div>
+            <div class="portfolioFor">
+                <div class="portfolio portfolio9">
+                    <div class="outlinedArrowDiv">
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(9, 'left'); disableClick(this)"><img src="outlined_left.png"
+                                class="outlinedArrows left"></div>
+                        <div class="outlinedArrowContainer"
+                            onclick="portfolioArrowHandler(9, 'right'); disableClick(this)"><img
+                                src="outlined_right.png" class="outlinedArrows right"></div>
+                    </div>
+                    <div class="portfolioSlide">
+                        <span class="portfolioDot" id="portfolio9Dot1">•</span>
+                        <span class="portfolioDot" id="portfolio9Dot2">•</span>
+                        <span class="portfolioDot" id="portfolio9Dot3">•</span>
+                        <span class="portfolioDot" id="portfolio9Dot4">•</span>
+                        <span class="portfolioDot" id="portfolio9Dot5">•</span>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <span class="authorName">황서희</span>
+            </div>
+        </div>
+
+        <div id="modal" class="modal">
+            <img class="modal-content" id="modalImg">
+            <span id="close">&times;</span>
+        </div>
+
+        <div style="height:100vh;"></div>
+    </div>
+
+</body>
+
+</html>

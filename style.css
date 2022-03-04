@@ -1,0 +1,427 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@100;200;500&display=swap');
+
+* {
+    font-family: 'IBM Plex Sans KR', sans-serif;
+    user-select: none;
+
+    padding: 0;
+    margin: 0;
+}
+
+#bodyLayout {
+    height: auto;
+    overflow: hidden;
+}
+
+.lielement {
+    margin-right: 4vw;
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.ex {
+    height: 300vh;
+    width: 100vh;
+}
+
+.SectionTitle {
+    text-align: center;
+    font-size: 2em;
+    font-weight: 500;
+    margin-bottom: 1em;
+}
+
+#MirPeople {
+    width: 40vw;
+}
+
+#main {
+    display: flex;
+}
+
+#greetings {
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    line-height: 4vh;
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.separator {
+    height: 5vh;
+    width: 90vw;
+}
+
+
+#shadowedBox {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0px 6px 9px 1px rgba(0, 0, 0, 0.31);
+}
+
+#room_sprite {
+    width: 563px;
+    height: 597px;
+    display: flex;
+    flex-direction: column;
+    background-size: 100%;
+    background: url('room_sprite.jpg') 0px 0;
+
+    transition: all .4s;
+}
+
+#arrowDiv {
+    width: 563px;
+    height: 597px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+#slideDot {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+}
+
+.dots {
+    font-size: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: gray;
+    cursor: pointer;
+
+    transition: all .4s;
+}
+
+#dots1 {
+    color: white;
+}
+
+.arrowContainer {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.arrows {
+    cursor: pointer;
+    margin-top: 70px;
+    user-select: none;
+    width: 30px;
+
+}
+
+.arrows.left {
+    padding-right: 15px;
+    margin-left: 15px;
+}
+
+.arrows.right {
+    padding-left: 15px;
+    margin-right: 15px;
+}
+
+#introText {
+    font-size: 23px;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    line-height: 5vh;
+}
+
+#postersDiv {
+    padding: 0;
+}
+
+#posters {
+    position: relative;
+    width: 100%;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    transition: all 0.2s;
+    transform: scale(0.98);
+    will-change: transform;
+    user-select: none;
+    cursor: grab;
+}
+
+.poster {
+    display: inline-block;
+    background: skyblue;
+    margin: 2em 1em;
+}
+
+.overlay {
+    position: absolute;
+    opacity: 0%;
+    top: 5%;
+    transition: all 0.7s;
+
+}
+
+.active {
+    opacity: 100%;
+    cursor: pointer;
+}
+
+.posterNameDiv {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0%;
+    display: flex;
+    align-items: flex-end;
+}
+
+.posterName {
+    margin: 10%;
+    color: white;
+    font-size: 1.4em;
+    font-weight: 200;
+}
+
+#posters::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+}
+
+#posters::-webkit-scrollbar {
+    height: .5em;
+    background-color: #F5F5F5;
+}
+
+#posters::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+    background-color: #555;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 10;
+    padding-top: 2em;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 600px;
+    min-height: 800px;
+}
+
+.modal-content {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+    from {
+        transform: scale(0)
+    }
+
+    to {
+        transform: scale(1)
+    }
+}
+
+
+#close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+#close:hover,
+#close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#portfolioDiv {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: auto;
+    align-content: center
+}
+
+.portfolioFor {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.portfolio {
+    width: 425px;
+    height: 425px;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    background-size: 100%;
+    flex: 0 0 auto;
+    margin: 53px;
+    margin-bottom: 20px;
+    transition: all .4s;
+}
+
+.portfolio1 {
+    background: url("portfolio_sprite/no1.jpg") 0px 0;
+}
+
+.portfolio2 {
+    background: url("portfolio_sprite/no2.jpg") 0px 0;
+}
+
+.portfolio3 {
+    background: url("portfolio_sprite/no3.jpg") 0px 0;
+}
+
+.portfolio4 {
+    background: url("portfolio_sprite/no4.jpg") 0px 0;
+}
+
+.portfolio5 {
+    background: url("portfolio_sprite/no5.jpg") 0px 0;
+}
+
+.portfolio6 {
+    background: url("portfolio_sprite/no6.jpg") 0px 0;
+}
+
+.portfolio7 {
+    background: url("portfolio_sprite/no7.jpg") 0px 0;
+}
+
+.portfolio8 {
+    background: url("portfolio_sprite/no8.jpg") 0px 0;
+}
+
+.portfolio9 {
+    background: url("portfolio_sprite/no9.jpg") 0px 0;
+}
+
+
+.authorName {
+    font-size: 1.4em;
+    font-weight: 400;
+}
+
+.outlinedArrowDiv {
+    width: 425px;
+    height: 425px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+.outlinedArrowContainer {
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+}
+
+.outlinedArrows {
+    cursor:pointer;
+    margin-top: 70px;
+    user-select: none;
+    width: 18px;
+}
+
+.outlinedArrows.left {
+    /* padding-right: 12px;
+    margin-left: 12px; */
+}
+
+.outlinedArrows.right {
+    /* padding-left: 12px;
+    margin-right: 12px; */
+}
+
+.portfolioSlide {
+    user-select: none;
+    display: flex;
+    justify-content: center;
+    z-index: 4;
+}
+
+.portfolioDot {
+    font-size: 30px;
+    padding-left: 5px;
+    padding-right: 5px;
+    color: gray;
+    cursor: pointer;
+    -webkit-text-stroke: 1px gray;
+
+    transition: all .4s;
+}
+
+#portfolio1Dot1 {
+    color:white;
+}
+
+#portfolio2Dot1 {
+    color:white;
+}
+
+#portfolio3Dot1 {
+    color:white;
+}
+
+#portfolio4Dot1 {
+    color:white;
+}
+
+#portfolio5Dot1 {
+    color:white;
+}
+
+#portfolio6Dot1 {
+    color:white;
+}
+
+#portfolio7Dot1 {
+    color:white;
+}
+
+#portfolio8Dot1 {
+    color:white;
+}
+
+#portfolio9Dot1 {
+    color:white;
+}
+
+
+
+
+@media only screen and (max-width: 700px) {
+    .modal-content {
+        width: 100%;
+    }
+}
