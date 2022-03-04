@@ -134,7 +134,7 @@ window.addEventListener("load", () => {
     modalImg = document.getElementById("modalImg");
     modalClose = document.querySelector("#close");
     if(window.innerWidth <= 768) {
-        document.querySelector("#MirPeople").src = "/small_MirPeople.jpg";
+        document.querySelector("#MirPeople").src = "small_MirPeople.jpg";
         document.querySelector("#room_sprite").style.background = "url('small_room_sprite.jpg') 0px 0";
 
         for(i = 1; i<=9; i++){
