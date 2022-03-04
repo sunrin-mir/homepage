@@ -1,0 +1,65 @@
+@media (max-width: 768px) {
+    .header {
+        position: fixed;
+    }
+    
+    #main{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #MirPeople {
+        width: 80vw;
+    }
+
+    #greetings {
+        font-size: 0.9em;
+        width: 80vw;
+        font-weight: 500;
+    }
+
+    #room_sprite {
+        width: 260px;
+        height: 276px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    #arrowDiv {
+        width:260px;
+    }
+
+    #shadowedBox {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #introText {
+        font-size: 0.8em;
+        margin-bottom: 20px;
+    }
+
+    #portfolioDiv {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    .portfolioFor {
+        max-width: 90vw;
+        
+    }
+    .portfolio {
+        max-width: 100%;
+        width: 350px;
+        height: 350px;
+    }
+    .outlinedArrowDiv {
+        max-width: 335px;
+        height: 350px;
+    }
+}

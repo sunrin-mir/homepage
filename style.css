@@ -8,6 +8,11 @@
     margin: 0;
 }
 
+.header {
+    position: fixed;
+    width: 100vw;
+}
+
 #bodyLayout {
     height: auto;
     overflow: hidden;
@@ -17,6 +22,20 @@
     margin-right: 4vw;
     font-size: 20px;
     font-weight: 200;
+    cursor: pointer;
+}
+
+.lielement::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: #d9acf2;
+    transition: width .3s;
+}
+
+.lielement:hover::after {
+    width:100%;
 }
 
 .ex {
@@ -417,11 +436,13 @@
     color:white;
 }
 
-
-
-
-@media only screen and (max-width: 700px) {
-    .modal-content {
-        width: 100%;
-    }
+footer {
+    display: flex;
+    flex-direction: column;
+    padding-top: 2em;
+    background-color: #faeff3;
+    color: #2b2829;
+    align-items: center;
+    line-height: 0.7em;
+    min-height: 15vh;
 }

@@ -14,6 +14,9 @@ let isDown = false;
 let startX;
 let scrollLeft;
 
+var width = $(window).width(),
+    height = $(window).height();
+
 
 function onSpriteClick(direction) {
     let style = getComputedStyle(document.querySelector("#room_sprite")).background;
@@ -21,22 +24,44 @@ function onSpriteClick(direction) {
     let idx_temp = style.indexOf("scroll") + 7;
     x_position = parseInt(style.slice(idx_temp, idx_Xpx));
 
-    if (direction === "left") {
-        x_position += 563;
-        if (dotNumber <= 1) {
-            dotNumber = 3;
+    if(window.innerWidth > 768) {
+        if (direction === "left") {
+            x_position += 563;
+            if (dotNumber <= 1) {
+                dotNumber = 3;
+            } else {
+                dotNumber--;
+            }
         } else {
-            dotNumber--;
+            x_position -= 563;
+            if (dotNumber >= 3) {
+                dotNumber = 1;
+            } else {
+                dotNumber++;
+            }
         }
+        document.querySelector("#room_sprite").style.background = `url('room_sprite.jpg') ${x_position}px 0`;
     } else {
-        x_position -= 563;
-        if (dotNumber >= 3) {
-            dotNumber = 1;
+        if (direction === "left") {
+            x_position += 260;
+            if (dotNumber <= 1) {
+                dotNumber = 3;
+            } else {
+                dotNumber--;
+            }
         } else {
-            dotNumber++;
+            x_position -= 260;
+            if (dotNumber >= 3) {
+                dotNumber = 1;
+            } else {
+                dotNumber++;
+            }
         }
+        document.querySelector("#room_sprite").style.background = `url('small_room_sprite.jpg') ${x_position}px 0`;
     }
-    document.querySelector("#room_sprite").style.background = `url('room_sprite.jpg') ${x_position}px 0`;
+
+    
+    
     setColor();
     document.querySelector(`#dots${dotNumber}`).style.color = "white";
 
@@ -85,6 +110,13 @@ function myscrollTo(element) {
     document.querySelector(`.${element}`).scrollIntoView();
 }
 
+window.addEventListener("resize", () => {
+    if ($(window).width() != width || $(window).height() != height) {
+        location.reload();
+    }
+})
+
+
 window.addEventListener("load", () => {
     overlayArr = document.querySelectorAll(".overlay");
     posterArr = document.querySelectorAll('.poster');
@@ -92,6 +124,16 @@ window.addEventListener("load", () => {
     modal = document.getElementById("modal");
     modalImg = document.getElementById("modalImg");
     modalClose = document.querySelector("#close");
+    if(window.innerWidth <= 768) {
+        document.querySelector("#MirPeople").src = "/small_MirPeople.jpg";
+        document.querySelector("#room_sprite").style.background = "url('small_room_sprite.jpg') 0px 0";
+
+        for(i = 1; i<=9; i++){
+            document.querySelector(`.portfolio${i}`).style.background = `url('small_portfolio/no${i}.jpg') 0px 0`;
+        }
+
+
+    }
 
     for(let i =0; i < posterArr.length; i++ ) {
         posterArr[i].addEventListener("dblclick", () => {
@@ -165,23 +207,45 @@ function portfolioArrowHandler(target, direction) {
     let idx_Xpx = style.indexOf("px");
     let idx_temp = style.indexOf("scroll") + 7;
     portfolioXposition[target-1] = parseInt(style.slice(idx_temp, idx_Xpx));
+    if(window.innerWidth > 768) {
+        if (direction === "left") {
+            portfolioXposition[target-1] += 425;
+            if (portfolioDotArr[target-1] <= 1) {
+                portfolioDotArr[target-1] = numofPortfolio;
+            } else {
+                portfolioDotArr[target-1]--;
+            }
+        } else {
+            portfolioXposition[target-1] -= 425;
+            if (portfolioDotArr[target-1] >= numofPortfolio) {
+                portfolioDotArr[target-1] = 1;
+            } else {
+                portfolioDotArr[target-1]++;
+            }
+        }
 
-    if (direction === "left") {
-        portfolioXposition[target-1] += 425;
-        if (portfolioDotArr[target-1] <= 1) {
-            portfolioDotArr[target-1] = numofPortfolio;
-        } else {
-            portfolioDotArr[target-1]--;
-        }
+        document.querySelector(`.portfolio${target}`).style.background = `url('portfolio_sprite/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
     } else {
-        portfolioXposition[target-1] -= 425;
-        if (portfolioDotArr[target-1] >= numofPortfolio) {
-            portfolioDotArr[target-1] = 1;
+        if (direction === "left") {
+            portfolioXposition[target-1] += 350;
+            if (portfolioDotArr[target-1] <= 1) {
+                portfolioDotArr[target-1] = numofPortfolio;
+            } else {
+                portfolioDotArr[target-1]--;
+            }
         } else {
-            portfolioDotArr[target-1]++;
+            portfolioXposition[target-1] -= 350;
+            if (portfolioDotArr[target-1] >= numofPortfolio) {
+                portfolioDotArr[target-1] = 1;
+            } else {
+                portfolioDotArr[target-1]++;
+            }
         }
+
+        document.querySelector(`.portfolio${target}`).style.background = `url('small_portfolio/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
     }
-    document.querySelector(`.portfolio${target}`).style.background = `url('portfolio_sprite/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
+    
+    
     setColor(target);
     document.querySelector(`#portfolio${target}Dot${portfolioDotArr[target-1]}`).style.color = "white";
 }
