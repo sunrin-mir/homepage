@@ -62,4 +62,8 @@
         max-width: 335px;
         height: 350px;
     }
+    
+    .mirTitle {
+        margin-top: 125px;
+    }
 }
