@@ -146,7 +146,10 @@ window.addEventListener("load", () => {
 
     for(let i =0; i < posterArr.length; i++ ) {
         posterArr[i].addEventListener("dblclick", () => {
-            displayModal(i+1);
+            if(window.innerWidth > 768){
+                displayModal(i+1);
+            }
+            
         })
     }
 
