@@ -107,7 +107,16 @@ function displayModal(number) {
 }
 
 function myscrollTo(element) {
-    document.querySelector(`.${element}`).scrollIntoView();
+    let topPosition = document.querySelector(`.${element}`).getBoundingClientRect().top  + window.pageYOffset;
+    if(window.innerWidth >768 ) {
+        topPosition -= 100;
+    } else {
+        topPosition -= 125;
+    }
+    window.scrollTo({
+        top: topPosition,
+        behavior: "smooth"
+    })
 }
 
 window.addEventListener("resize", () => {
