@@ -439,10 +439,20 @@
 footer {
     display: flex;
     flex-direction: column;
-    padding-top: 2em;
+    justify-content: center;
     background-color: #faeff3;
     color: #2b2829;
     align-items: center;
-    line-height: 0.7em;
-    min-height: 15vh;
+    min-height: 20vh;
+}
+
+.footerText {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.footerText p {
+    margin-top: 0;
+    margin-bottom: 0;
 }
