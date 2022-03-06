@@ -371,16 +371,6 @@
     width: 18px;
 }
 
-.outlinedArrows.left {
-    /* padding-right: 12px;
-    margin-left: 12px; */
-}
-
-.outlinedArrows.right {
-    /* padding-left: 12px;
-    margin-right: 12px; */
-}
-
 .portfolioSlide {
     user-select: none;
     display: flex;
