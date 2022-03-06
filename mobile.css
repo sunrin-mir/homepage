@@ -55,7 +55,7 @@
     }
     .portfolio {
         max-width: 100%;
-        width: 350px;
+        background-size: cover;
         height: 350px;
     }
     .outlinedArrowDiv {

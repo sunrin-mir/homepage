@@ -138,7 +138,7 @@ window.addEventListener("load", () => {
         document.querySelector("#room_sprite").style.background = "url('small_room_sprite.jpg') 0px 0";
 
         for(i = 1; i<=9; i++){
-            document.querySelector(`.portfolio${i}`).style.background = `url('small_portfolio/no${i}.jpg') 0px 0`;
+            
         }
 
 
@@ -236,8 +236,9 @@ function portfolioArrowHandler(target, direction) {
             }
         }
 
-        document.querySelector(`.portfolio${target}`).style.background = `url('portfolio_sprite/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
-    } else {
+        
+    }
+    else {
         if (direction === "left") {
             portfolioXposition[target-1] += 350;
             if (portfolioDotArr[target-1] <= 1) {
@@ -254,10 +255,12 @@ function portfolioArrowHandler(target, direction) {
             }
         }
 
-        document.querySelector(`.portfolio${target}`).style.background = `url('small_portfolio/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
+        // document.querySelector(`.portfolio${target}`).style.background = `url('small_portfolio/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
     }
     
-    
+    document.querySelector(`.portfolio${target}`).style.background = `url('portfolio_sprite/no${target}.jpg') ${portfolioXposition[target-1]}px 0`;
+    document.querySelector(`.portfolio${target}`).style.backgroundSize = `cover`
+
     setColor(target);
     document.querySelector(`#portfolio${target}Dot${portfolioDotArr[target-1]}`).style.color = "white";
 }
